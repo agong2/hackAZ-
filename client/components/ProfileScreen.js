@@ -17,7 +17,7 @@ export default class HomeScreen extends Component {
         alignItems: 'center',
       }}>
         <View style={{width: 500, height: 200, marginTop: 100}}>
-            <Text style={{fontSize: 70, fontWeight: 'bold', textAlign: 'center'}}> StudyUp </Text>
+            <Text style={{fontSize: 70, fontWeight: 'bold', textAlign: 'center'}}> Profile </Text>
         </View>
         <View style={{display: 'flex', flexDirection: 'row', }}>
             <Button
@@ -26,7 +26,19 @@ export default class HomeScreen extends Component {
             color="#841584"
             />
         </View>
+        <View style={{
+          flex: 1,
+          left: 0,
+          position: 'absolute',
+          right: 0,
+          top: 0,
+          zIndex: 1
+        }}>
+        <Autocomplete {/* your props */} />
       </View>
+      <View>
+        <Text>Some content</Text>
+      <View />
     );
   }
 }
