@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, Image, StyleSheet } from 'react-native';
+import { AppRegistry, Text, View, Image, StyleSheet, Button} from 'react-native';
+import {StackNavigator} from 'react-navigation';
+
 
 
 export default class HomeScreen extends Component {
+    constructor(props){
+        super(props);
+    }
+
   render() {
     return (
-        <View>
-            <Text style={styles.gay}>god fucking dammit</Text>
-            <Image style={styles.dale} source={require('../images/studying.jpg')}/>
+        <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}>
+        <View style={{width: 500, height: 200, marginTop: 100}}>
+            <Text style={{fontSize: 70, fontWeight: 'bold', textAlign: 'center'}}> Study Up! </Text>
         </View>
+        <View style={{display: 'flex', flexDirection: 'row', }}>
+            <Button
+            title="Create Your Account"
+            onPress={() => navigation.navigate('Details')}
+            color="#841584"
+            />
+        </View>
+      </View>
     );
   }
 }
 
 
-const styles = StyleSheet.create({
-    gay: {
-        color: 'blue',
-    },
-    dale: {
-        background-repeat: 'no-repeat',
-        background-position: 'top center',
-        background-attachment: 'fixed',
-        background-size: 'cover',
-    },
-});
+
 
 // skip this line if using Create React Native App
 AppRegistry.registerComponent('AwesomeProject', () => HelloWorldApp);
