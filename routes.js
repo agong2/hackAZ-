@@ -37,4 +37,28 @@ router.post('/uploadProfile', (req,res,next) =>{
     })
 });
 
+router.post('/sortProfile', (req, res, next) => {
+  db.profiles.find().sort({req.body}, function(err, docs){
+    if(err){
+      console.log(err);
+    }
+    else{
+      for(var x = 0; x < docs.length; x++){
+        if(docs[x] == req.body){
+          matchedArray.push(req.body)
+        }
+      }
+      console.log(docs);
+    }
+  })
+});
+
+
+
+
+
+
+
+
+
 module.exports = router;
