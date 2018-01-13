@@ -20,13 +20,14 @@ router.get('/current', (req, res, next) => {
 
 router.post('/uploadProfile', (req,res,next) =>{
     db.profiles.insert({
-      userReview: req.body.review,
+      //userReview: req.body.review,
       userName: req.body.name,
       userClass: req.body.class,
       userMajor: req.body.major,
       userLoc: req.body.location,
       userBio: req.body.bio,
-      userMatch: req.body.match
+      userMatch: req.body.match,
+      userLikes: 0
     } function(err,docs){
       if(err){
         console.log(err);
@@ -43,16 +44,33 @@ router.post('/sortProfile', (req, res, next) => {
       console.log(err);
     }
     else{
+      var matchedArray = [];
       for(var x = 0; x < docs.length; x++){
-        if(docs[x] == req.body){
-          matchedArray.push(req.body)
+        for(var y = 0; y < docs[x].class.length; y++){
+          if(docs[y].class == req.body.class){
+            matchedArray.push(docs[x]);
+          }
         }
       }
-      console.log(docs);
+      console.log(matchedArray);
     }
   })
+  /*var keys = _.keys(req.body);
+  profiles.find(req.body).select(keys.join(' ')).lean().exec(function(err, user {
+  if (err)
+    throw err;
+  res.send(user);*/
 });
 
+router.post('/userLikes', (req, res, next) => {
+  db.profiles.update({_id: req.body._id}, {$inc: {userLikes: 1}}, {multi: true}, function () {
+  // the update is complete 
+})
+});
+
+// router.post('/findId', (req, res, next) => {
+//   profiles.find({_id:""})
+// })
 
 
 
