@@ -6,7 +6,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
         <View>
-            <Text style={styles.gay}>god fucking dammit</Text>
+            <Text style={styles.wilson}></Text>
             <Image style={styles.dale} source={require('../images/studying.jpg')}/>
         </View>
     );
@@ -15,8 +15,8 @@ export default class HomeScreen extends Component {
 
 
 const styles = StyleSheet.create({
-    gay: {
-        color: 'blue',
+    wilson: {
+        color: 'blue';
     },
     dale: {
         background-repeat: no-repeat;
