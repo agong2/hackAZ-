@@ -1,0 +1,23 @@
+{
+  "name": "studyup",
+  "version": "1.0.0",
+  "description": "study tinder for hack az\r fpoijwofjweofjwoejfowejfoew",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WXBaiHu/hackAZ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WXBaiHu/hackAZ/issues"
+  },
+  "homepage": "https://github.com/WXBaiHu/hackAZ#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
