@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
         color: 'blue',
     },
     dale: {
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-attachment: fixed;
-        background-size: cover;
+        background-repeat: 'no-repeat',
+        background-position: 'top center',
+        background-attachment: 'fixed',
+        background-size: 'cover',
     },
 });
 
