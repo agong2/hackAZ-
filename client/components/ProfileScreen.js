@@ -1,47 +1,43 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, Image, StyleSheet, Button} from 'react-native';
+import { AppRegistry, Text, View, Image, StyleSheet, Button, Picker} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 
 
 
-export default class HomeScreen extends Component {
+
+export default class ProfileScreen extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            name: null,
+            language: null,
+            major: null
+        }
     }
 
   render() {
     return (
-        <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}>
-        <View style={{width: 500, height: 200, marginTop: 100}}>
-            <Text style={{fontSize: 70, fontWeight: 'bold', textAlign: 'center'}}> Profile </Text>
+        <View style={{display: 'flex', flexDirection: 'column'}}>
+            <Text style={{fontSize: 75, textAlign: 'center'}}>Dale Kim</Text>
+            <View style={{display: 'flex', flexDirection: 'row'}}>
+                <Text style={{fontSize: 30, color: 'blue'}}>Major:</Text>
+                <Text style={{fontSize: 30, }}> Computer Science</Text>
+            </View>
+            <View style={{display: 'flex', flexDirection: 'row'}}>
+                <Text style={{fontSize: 30, color: 'blue'}}>Location:</Text>
+                <Picker
+                  selectedValue={this.state.language}
+                  onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+                  <Picker.Item label="Memorial Union" value="mu" />
+                  <Picker.Item label="Hayden Library" value="hy" />
+                  <Picker.Item label="Noble Library" value="nl" />
+                  <Picker.Item label="Vista Del Sol" value="vds" />
+                  <Picker.Item label="Barrett" value="bt" />
+                  <Picker.Item label="University Towers" value="ut" />
+                  <Picker.Item label="Palo Verde" value="pv" />
+                </Picker>
+            </View>
         </View>
-        <View style={{display: 'flex', flexDirection: 'row', }}>
-            <Button
-            title="Create Your Account"
-            onPress={() => navigation.navigate('Details')}
-            color="#841584"
-            />
-        </View>
-        <Autocomplete
-            getItemValue={(item) => item.label}
-            items={[
-              { label: 'FUCK' },
-              { label: 'MY' },
-              { label: 'ASS' }
-            ]}
-            renderItem={(item, isHighlighted) =>
-              <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
-                {item.label}
-              </div>
-            }
-            value={value}
-            onChange={(e) => value = e.target.value}
-            onSelect={(val) => value = val}
-            />
     );
   }
 }
