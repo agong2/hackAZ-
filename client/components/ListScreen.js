@@ -4,13 +4,13 @@ import SelectMultiple from 'react-native-select-multiple'
 import {StackNavigator} from 'react-navigation';
 import { AsyncStorage, AppRegistry, Text, Image, StyleSheet, Button, Picker, TextInput} from 'react-native';
 
-const fruits = ['Apples', 'Oranges', 'Pears']
+const fruits = ['CSE310', 'CSE301', 'CSE360', 'GLG102', 'DCE123']
 // --- OR ---
 // const fruits = [
 //   { label: 'Apples', value: 'appls' },
 //   { label: 'Oranges', value: 'orngs' },
 //   { label: 'Pears', value: 'pears' }
-// ]
+// ]<Text style={{fontSize: 22}}>CSE 230 - Calliss</Text>
 
 const renderLabel = (label, style) => {
   return (
@@ -34,10 +34,20 @@ export default class ListScreen extends Component {
   render () {
     return (
       <View>
+      <View>
         <SelectMultiple
           items={fruits}
           selectedItems={this.state.selectedFruits}
           onSelectionsChange={this.onSelectionsChange} />
+      </View>
+      <View>
+      <Button
+      title="List Matches"
+      //onPress={() =>
+      //        navigate('Profile')}
+      color="#841584">
+      </Button>
+      </View>
       </View>
     )
   }
