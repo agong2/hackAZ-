@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, AppRegistry } from 'react-native';
+import { AsyncStorage, StyleSheet, Text, View, Image, Button, AppRegistry } from 'react-native';
 import {
   StackNavigator,
 } from 'react-navigation';
