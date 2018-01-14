@@ -35,7 +35,7 @@ export default class HomeScreen extends Component {
         alignItems: 'center',
       }}>
         <View style={{width: 500, height: 200, marginTop: 100}}>
-            <Text style={{fontSize: 70, fontWeight: 'bold', textAlign: 'center'}}> Study Up! </Text>
+            <Text style={{fontSize: 70, fontWeight: 'bold', textAlign: 'center'}}> StudyUp </Text>
         </View>
         <Form
           ref="form"
