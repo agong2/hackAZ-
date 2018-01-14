@@ -45,7 +45,9 @@ export default class HomeScreen extends Component {
         <View style={{display: 'flex', flexDirection: 'column', height: 120, justifyContent: 'space-between'}}>
             <Button
             title="Login"
-            onPress={this.handleSubmit}
+            onPress={() =>
+                    navigate('List')}
+            //onPress={this.handleSubmit}
             color="#841584"
             />
             <Button
@@ -63,4 +65,3 @@ export default class HomeScreen extends Component {
 
 
 // skip this line if using Create React Native App
-AppRegistry.registerComponent('AwesomeProject', () => HelloWorldApp);
