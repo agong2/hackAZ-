@@ -26,19 +26,22 @@ export default class HomeScreen extends Component {
             color="#841584"
             />
         </View>
-        <View style={{
-          flex: 1,
-          left: 0,
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          zIndex: 1
-        }}>
-        <Autocomplete {/* your props */} />
-      </View>
-      <View>
-        <Text>Some content</Text>
-      <View />
+        <Autocomplete
+            getItemValue={(item) => item.label}
+            items={[
+              { label: 'FUCK' },
+              { label: 'MY' },
+              { label: 'ASS' }
+            ]}
+            renderItem={(item, isHighlighted) =>
+              <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+                {item.label}
+              </div>
+            }
+            value={value}
+            onChange={(e) => value = e.target.value}
+            onSelect={(val) => value = val}
+            />
     );
   }
 }

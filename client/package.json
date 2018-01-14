@@ -19,8 +19,10 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "exp": "^47.4.4",
     "expo": "^23.0.4",
     "react": "16.0.0",
+    "react-autocomplete": "^1.7.2",
     "react-native": "0.50.3",
     "react-navigation": "^1.0.0-beta.26"
   }
