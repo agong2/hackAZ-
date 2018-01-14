@@ -24,6 +24,8 @@
     "react": "16.0.0",
     "react-autocomplete": "^1.7.2",
     "react-native": "0.50.3",
-    "react-navigation": "^1.0.0-beta.26"
+    "react-native-multiple-select": "^0.3.0",
+    "react-navigation": "^1.0.0-beta.26",
+    "tcomb-form-native": "^0.6.11"
   }
 }
