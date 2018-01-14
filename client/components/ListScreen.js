@@ -32,6 +32,7 @@ export default class ListScreen extends Component {
   }
 
   render () {
+    const { navigate } = this.props.navigation;
     return (
       <View>
       <View>
@@ -43,8 +44,8 @@ export default class ListScreen extends Component {
       <View>
       <Button
       title="List Matches"
-      //onPress={() =>
-      //        navigate('Profile')}
+      onPress={() =>
+              navigate('AlansBaby')}
       color="#841584">
       </Button>
       </View>

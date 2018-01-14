@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, StyleSheet, View, Image } from 'react-native';
+import {StackNavigator} from 'react-navigation';
 
 export default class TextInANest extends Component {
   constructor(props) {
@@ -18,12 +19,10 @@ export default class TextInANest extends Component {
         <Text style={styles.titleText} onPress={this.onPressTitle}>
           {this.state.titleText}{'\n'}{'\n'}
         </Text>
-
          <Image
         source={{ uri: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}
         style={{ height: 140, width: 140 }}
       />
-
         <Text numberOfLines={5}>
           {this.state.bodyText}
         </Text>
@@ -46,7 +45,7 @@ export default class TextInANest extends Component {
 
 const styles = StyleSheet.create({
   baseText: {
-    fontFamily: 'Cochin',
+  //  fontFamily: 'Arial',
     fontSize: 20,
   },
   titleText: {
