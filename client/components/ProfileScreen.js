@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { AsyncStorage, AppRegistry, Text, View, Image, StyleSheet, Button, Picker, TextInput} from 'react-native';
 import {StackNavigator} from 'react-navigation';
-
-
-
-
 export default class ProfileScreen extends Component {
     constructor(props){
         super(props);
