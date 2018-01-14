@@ -50,7 +50,8 @@ export default class HomeScreen extends Component {
             />
             <Button
             title="Create Your Account"
-            onPress={this.handleSubmit}
+            onPress={() =>
+                    navigate('Profile')}
             color="#841584"
             />
             <Text style={{color:'blue', textAlign:'center'}}>Forgot Your Password?</Text>

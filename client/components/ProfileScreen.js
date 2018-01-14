@@ -1,44 +1,80 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, View, Image, StyleSheet, Button} from 'react-native';
 import {StackNavigator} from 'react-navigation';
+import MultiSelect from 'react-native-multiple-select';
 
 
 
-export default class HomeScreen extends Component {
+export default class ProfileScreen extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            selectedItems: [];
+        };
+        this.items = [{
+           id: '92iijs7yta',
+           name: 'Ondo',
+         }, {
+           id: 'a0s0a8ssbsd',
+           name: 'Ogun',
+         }, {
+           id: '16hbajsabsd',
+           name: 'Calabar',
+         }, {
+           id: 'nahs75a5sg',
+           name: 'Lagos',
+         }, {
+           id: '667atsas',
+           name: 'Maiduguri',
+         }, {
+           id: 'hsyasajs',
+           name: 'Anambra',
+         }, {
+           id: 'djsjudksjd',
+           name: 'Benue',
+         }, {
+           id: 'sdhyaysdj',
+           name: 'Kaduna',
+         }, {
+           id: 'suudydjsjd',
+           name: 'Abuja',
+     }];
     }
+    onSelectedItemsChange = selectedItems => {
+      this.setState({ selectedItems });
+    };
 
   render() {
+      const { selectedItems } = this.state;
+
     return (
-        <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}>
-        <View style={{width: 500, height: 200, marginTop: 100}}>
-            <Text style={{fontSize: 70, fontWeight: 'bold', textAlign: 'center'}}> Profile </Text>
+        <View style={{ flex: 1 }}>
+        <MultiSelect
+          hideTags
+          items={items}
+          uniqueKey="id"
+          ref={(component) => { this.multiSelect = component }}
+          onSelectedItemsChange={this.onSelectedItemsChange}
+          selectedItems={selectedItems}
+          selectText="Pick Items"
+          searchInputPlaceholderText="Search Items..."
+          onChangeInput={ (text)=> console.log(text)}
+          altFontFamily="ProximaNova-Light"
+          tagRemoveIconColor="#CCC"
+          tagBorderColor="#CCC"
+          tagTextColor="#CCC"
+          selectedItemTextColor="#CCC"
+          selectedItemIconColor="#CCC"
+          itemTextColor="#000"
+          displayKey="name"
+          searchInputStyle={{ color: '#CCC' }}
+          submitButtonColor="#CCC"
+          submitButtonText="Submit"
+        />
+        <View>
+          {this.multiSelect.getSelectedItemsExt(selectedItems)}
         </View>
-        <View style={{display: 'flex', flexDirection: 'row', }}>
-            <Button
-            title="Create Your Account"
-            onPress={() => navigation.navigate('Details')}
-            color="#841584"
-            />
-        </View>
-        <View style={{
-          flex: 1,
-          left: 0,
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          zIndex: 1
-        }}>
-        <Autocomplete {/* your props */} />
       </View>
-      <View>
-        <Text>Some content</Text>
-      <View />
     );
   }
 }
